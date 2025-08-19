@@ -4,10 +4,9 @@ const { productValidation } = require("../middlewares/validation");
 const fs = require("fs");
 const path = require("path");
 
-const categories = ["Electronics", "Books", "Clothing", "Toys"];
+// const categories = ["Electronics", "Books", "Clothing", "Toys"];
 
 class AdminController {
-
   static dashboard = async (req, res) => {
     try {
       const totalProducts = await Product.countDocuments({ isDeleted: false });
@@ -84,7 +83,6 @@ class AdminController {
         req.flash("error_msg", "Product not found");
         return res.redirect("/admin/products");
       }
-  
 
       const categories = await Category.find({ isDeleted: false });
       res.render("admin/editProduct", {

@@ -361,7 +361,7 @@ a.back-link:hover {
 }
 
 
-/* General Page Styling */
+
 body {
   background-color: #f8f9fa;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -404,13 +404,12 @@ h2.fw-bold {
 }
 
 
-/* Make body take full height */
 html, body {
   height: 100%;
 
 }
 
-/* Main content should expand and push footer down */
+
 .container, main, .content {
   flex: 1;
 }
@@ -421,11 +420,11 @@ footer {
   color: #fff;
   text-align: center;
   padding: 12px 0;
-  margin-top: auto; /* keeps footer at bottom */
+  margin-top: auto; 
 }
 
 select, option {
-  color: #000 !important;   /* make text visible */
+  color: #000 !important;
   background-color: #fff;
   padding: 8px;
   border: 1px solid #ccc;
