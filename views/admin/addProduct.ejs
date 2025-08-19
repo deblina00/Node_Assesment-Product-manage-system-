@@ -28,12 +28,19 @@
 
     <div class="form-group">
       <label for="category">Category</label>
-      <select id="category" name="category" required>
+      <!-- <select id="category" name="category" required>
         <option value="">Select Category</option>
         <% categories.forEach(cat => { %>
         <option value="<%= cat %>"><%= cat %></option>
         <% }) %>
-      </select>
+      </select> -->
+      <select id="category" name="category" required>
+  <option value="">Select Category</option>
+  <% categories.forEach(cat => { %>
+    <option value="<%= cat.name %>"><%= cat.name %></option>
+  <% }) %>
+</select>
+
     </div>
 
     <div class="form-group">

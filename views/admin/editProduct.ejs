@@ -21,13 +21,21 @@
 
     <div class="form-group">
       <label for="category">Category</label>
-     <select id="category" name="category" required>
+     <!-- <select id="category" name="category" required>
   <% categories.forEach(cat => { %>
     <option value="<%= cat %>" <%= product.category === cat ? 'selected' : '' %>>
       <%= cat %>
     </option>
   <% }) %>
+</select> -->
+<select id="category" name="category" required>
+  <% categories.forEach(cat => { %>
+    <option value="<%= cat.name %>" <%= product.category === cat.name ? 'selected' : '' %>>
+      <%= cat.name %>
+    </option>
+  <% }) %>
 </select>
+
 
     </div>
 

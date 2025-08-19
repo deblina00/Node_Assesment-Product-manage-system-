@@ -7,15 +7,7 @@ const path = require("path");
 const categories = ["Electronics", "Books", "Clothing", "Toys"];
 
 class AdminController {
-  // static dashboard = async (req, res) => {
-  //   try {
-  //     const totalProducts = await Product.countDocuments({ isDeleted: false });
-  //     res.render("admin/dashboard", { totalProducts });
-  //   } catch (error) {
-  //     req.flash("error_msg", "Something went wrong");
-  //     res.redirect("/admin");
-  //   }
-  // };
+
   static dashboard = async (req, res) => {
     try {
       const totalProducts = await Product.countDocuments({ isDeleted: false });
@@ -42,14 +34,6 @@ class AdminController {
       res.redirect("/admin");
     }
   };
-
-  // static addProductForm = (req, res) => {
-  //   res.render("admin/addProduct", {
-  //     categories,
-  //     success_msg: req.flash("success_msg"),
-  //     error_msg: req.flash("error_msg"),
-  //   });
-  // };
 
   static addProductForm = async (req, res) => {
     try {
@@ -100,12 +84,7 @@ class AdminController {
         req.flash("error_msg", "Product not found");
         return res.redirect("/admin/products");
       }
-      // res.render("admin/editProduct", {
-      //   product,
-      //   categories,
-      //   success_msg: req.flash("success_msg"),
-      //   error_msg: req.flash("error_msg"),
-      // });
+  
 
       const categories = await Category.find({ isDeleted: false });
       res.render("admin/editProduct", {
