@@ -1,0 +1,14 @@
+
+<%- include('../partials/header') %>
+
+<div class="admin-dashboard">
+  <h1>Admin Dashboard</h1>
+  <div class="stats-card">
+    <p><strong>Total Products:</strong> <%= totalProducts %></p>
+    <p><strong>Total Categories:</strong> <%= totalCategories %></p>
+  </div>
+
+  <a href="/admin/products" class="btn">Manage Products</a>
+  <a href="/admin/categories" class="btn btn-secondary">Manage Categories</a>
+</div>
+

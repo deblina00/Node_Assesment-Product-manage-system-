@@ -1,0 +1,42 @@
+<%- include('../partials/header') %>
+
+<div class="product-management">
+  <div class="header-row">
+    <h1>Product Management</h1>
+    <a href="/admin/products/add" class="btn add-btn">+ Add Product</a>
+  </div>
+
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Image</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% products.forEach(product => { %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.category %></td>
+        <td>
+          <% if(product.image){ %>
+            <img src="/uploads/<%= product.image %>" width="80" />
+          <% } else { %> 
+            <span class="na">N/A</span> 
+          <% } %>
+        </td>
+        <td>
+          <a href="/admin/products/edit/<%= product._id %>" class="btn edit-btn">Edit</a>
+          <a href="/admin/products/delete/<%= product._id %>" class="btn delete-btn"
+             onclick="return confirm('Are you sure?')">Delete</a>
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+
+<%- include('../partials/footer') %>
+
